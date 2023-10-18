@@ -1,0 +1,108 @@
+.header {
+    margin-bottom: 40px;
+    margin-top: 30px;
+    
+}
+
+.links {
+    margin-bottom: 20px;
+}
+
+.links a {
+    color: #4f4f4f;
+}
+
+.title {
+    color: #4f4f4f;
+}
+
+.registration-title, .login-title {
+    text-align: center;
+}
+
+.back-to-main-link {
+    margin-bottom: 30px;
+}
+
+.back-to-main-link a {
+    color: #4f4f4f;
+}
+
+.registration-main, .login-main {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.registration-button, .login-button {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.registration-button button, .login-button button {
+    width: 300px;
+}
+
+.search-bar {
+    margin-right: 10px;
+}
+
+.search-result-title p, .search-result-title a {
+    color: #4f4f4f;
+}
+
+table {
+    table-layout: fixed;
+    width: 25%;
+}
+
+.search-mark {
+    background: #ffec82;
+}
+
+.column-header a {
+    color: black;
+}
+
+.pagination {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+li.page-number, li.page-before, li.page-after {
+    width: 50px;
+    text-align: center;
+}
+
+.already-registered {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.already-registered a{
+    color: #4f4f4f;
+}
+
+.check-input {
+    display: flex;
+}
+
+.form-label {
+    margin-right: 30px;
+}
+
+.form-check {
+    margin-right: 40px;
+}
+
+.form-check-input:hover {
+    cursor: pointer;
+}
+
+.error-banner {
+    margin: 50px auto 0 auto;
+}
+
+.error-banner a {
+    color: #4f4f4f;
+}
