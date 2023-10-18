@@ -38,13 +38,11 @@ class MainController extends AbstractController
         $params['pagesCount'] = $search ? $pager->getPagesCountByKeyword($params['search']) : $pager->getPagesCount();
         $params['order'] = !empty($_GET['order']) ? strval($_GET['order']) : 'points';
         $params['direction'] = !empty($_GET['direction']) ? strval($_GET['direction']) : 'DESC';
-
         $httpQuery = http_build_query(array(
             'order' => $params['order'],
-            'direction' => $params['direction'], 
+            'direction' => $params['direction'],
             'search' => $params['search']
         ));
-
         $params['pageLinks'] = $pager->getPageLinks($pageNum, $params['pagesCount'], $params['order'], $params['direction'], $params['search']);
         $params['previousPageLink'] = $pageNum > 1 ? '/' . ($pageNum - 1) . "?" . $httpQuery : null;
         $params['nextPageLink'] = $pageNum < $params['pagesCount'] ? '/' . ($pageNum + 1) . "?" . $httpQuery : null;

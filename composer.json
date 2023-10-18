@@ -1,0 +1,16 @@
+{
+    "name": "olegeliseev/students",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Oleg Eliseev",
+            "email": "olegeliseev96@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Students\\": "src/Students/"
+        }
+    }
+}
