@@ -106,3 +106,21 @@ li.page-number, li.page-before, li.page-after {
 .error-banner a {
     color: #4f4f4f;
 }
+
+.credits {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    color: rgb(0, 0, 0, 60%);
+}
+
+.credits a, .credits a:visited {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.credits i {
+    margin-left: 5px;
+}
