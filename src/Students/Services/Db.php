@@ -5,7 +5,6 @@ use Students\Exceptions\DbException;
 
 class Db
 {
-
     private $pdo;
 
     private static $instance;
