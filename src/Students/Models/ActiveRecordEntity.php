@@ -5,18 +5,32 @@ use Students\Services\Db;
 
 abstract class ActiveRecordEntity {
 
+    /** @var int */
     protected $id;
 
+    /**
+     * @return int
+     */
     public function getId(): int {
         return $this->id;
     }
 
+    /** 
+     * @param string $name
+     * 
+     * @param string $value
+     */
     public function __set($name, $value)
     {
         $camelCaseName = $this->underscoreToCamelCase($name);
         $this->$camelCaseName = $value;
     }
 
+    /** 
+     * @param string $source
+     * 
+     * @return string
+     */
     private function underscoreToCamelCase(string $source): string
     {
         return lcfirst(str_replace('_', '', ucwords($source, '_')));
@@ -27,12 +41,24 @@ abstract class ActiveRecordEntity {
         return strtolower(preg_replace('/(?<!^)[A-Z]/', '_$0', $source));
     }
 
+    /**
+     * @param string $order
+     * 
+     * @param string $direction
+     * 
+     * @return static[]
+     */
     public static function findAll(string $order = 'points', string $direction = 'DESC'): array
     {
         $db = Db::getInstance();
         return $db->query("SELECT * FROM `" . static::getTableName() . "` ORDER BY {$order} {$direction};", [], static::class);
     }
 
+    /**
+     * @param string $id
+     * 
+     * @return static|null
+     */
     public static function getById($id): ?self
     {
         $db = Db::getInstance();
@@ -40,6 +66,13 @@ abstract class ActiveRecordEntity {
         return $entities ? $entities[0] : null;
     }
 
+    /**
+     * @param string $columnName
+     * 
+     * @param string $value
+     * 
+     * @return static|null
+     */
     public static function findOneByColumn(string $columnName, $value): ?self {
         
         $db = Db::getInstance();
@@ -52,6 +85,7 @@ abstract class ActiveRecordEntity {
         return $result[0];
     }
 
+    /** @return void */
     public function save(): void
     {
         $mappedProperties = $this->mapPropertiesToDbFormat();
@@ -62,6 +96,11 @@ abstract class ActiveRecordEntity {
         }
     }
 
+    /** 
+     * @param array $mappedProperties
+     * 
+     * @return void
+     */
     private function update(array $mappedProperties): void
     {
 
@@ -79,6 +118,11 @@ abstract class ActiveRecordEntity {
         $db->query($sql, $paramsToColumns, static::class);
     }
 
+    /** 
+     * @param array $mappedProperties
+     * 
+     * @return void
+     */
     private function insert(array $mappedProperties): void
     {
 
@@ -104,6 +148,7 @@ abstract class ActiveRecordEntity {
         $this->refresh();
     }
 
+    /** @return void */
     public function refresh(): void
     {
 
@@ -114,6 +159,7 @@ abstract class ActiveRecordEntity {
         }
     }
 
+    /** @return array */
     public function mapPropertiesToDbFormat(): array
     {
 

@@ -12,8 +12,8 @@ use \Students\Helpers\Validator;
 
 class UsersController extends AbstractController
 {
-
-    public function register()
+    /** @return void */
+    public function register(): void
     {
         if (!empty($_POST)) {
             try {
@@ -33,7 +33,8 @@ class UsersController extends AbstractController
         $this->view->renderHtml('users/register.php');
     }
 
-    public function login()
+    /** @return void */
+    public function login(): void
     {
         if (!empty($_POST)) {
             try {
@@ -50,13 +51,15 @@ class UsersController extends AbstractController
         $this->view->renderHtml('users/login.php');
     }
 
-    public function logout()
+    /** @return void */
+    public function logout(): void
     {
         setcookie('token', '', -1, '/', '', false, true);
         header('Location: /');
     }
 
-    public function edit(int $userId)
+    /** @param int $userId */
+    public function edit(int $userId): void
     {
 
         $user = User::getById($userId);

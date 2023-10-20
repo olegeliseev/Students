@@ -8,7 +8,7 @@ use Students\Helpers\Pager;
 
 class MainController extends AbstractController
 {
-
+    /** @param int $pageNum */
     public function main(int $pageNum = 1)
     {
         $pageParams = $this->getPageParams($pageNum);
@@ -27,7 +27,13 @@ class MainController extends AbstractController
             'direction' => $pageParams['direction']
         ]);
     }
-
+    /** 
+     * Returns an array of parameters for the main page template
+     * 
+     * @param int $pageNum 
+     * 
+     * @return array $params
+     */
     public function getPageParams(int $pageNum): array
     {
         $search = !empty($_GET['search']) ? true : false;

@@ -4,9 +4,12 @@ namespace Students\Controllers;
 use Students\View\View;
 use Students\Models\Users\UsersAuthService;
 
-abstract class AbstractController {
-    
+abstract class AbstractController 
+{
+    /** @var View */    
     protected $view;
+
+    /** @var User|null */    
     protected $user;
 
     function __construct()

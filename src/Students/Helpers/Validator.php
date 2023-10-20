@@ -5,7 +5,14 @@ use Students\Exceptions\InvalidArgumentException;
 
 class Validator {
 
-    public static function validateAllFields(array $userData, string $fn) 
+    /**
+     * @param array $userData
+     * 
+     * @param string $fn used to identify the method where validation was called
+     * 
+     * @return void
+     */
+    public static function validateAllFields(array $userData, string $fn): void
     {
         if($fn === 'login' || $fn === 'register') {
             self::validateEmail($userData['email']);
@@ -23,28 +30,48 @@ class Validator {
         }
     }
 
-    private static function validateFirstName(string $firstName) 
+    /** 
+     * @param string $firstName
+     * 
+     * @return void
+     */
+    private static function validateFirstName(string $firstName): void
     {
         if (empty($firstName)) {
             throw new InvalidArgumentException('Не передано имя');
         }
     }
 
-    private static function validateLastName(string $lastName)
+    /** 
+     * @param string $lastName
+     * 
+     * @return void
+     */
+    private static function validateLastName(string $lastName): void
     {
         if (empty($lastName)) {
             throw new InvalidArgumentException('Не передана фамилия');
         }
     }
 
-    private static function validateGender(string $gender)
+    /** 
+     * @param string $gender
+     * 
+     * @return void
+     */
+    private static function validateGender(string $gender): void
     {
         if (empty($gender)) {
             throw new InvalidArgumentException('Не передан пол');
         }
     }
 
-    private static function validateGroupNumber(string $groupNumber)
+    /** 
+     * @param string $groupNumber
+     * 
+     * @return void
+     */
+    private static function validateGroupNumber(string $groupNumber): void
     {
         if (empty($groupNumber)) {
             throw new InvalidArgumentException('Не передан номер группы');
@@ -55,7 +82,12 @@ class Validator {
         }
     }
 
-    private static function validateEmail(string $email)
+    /** 
+     * @param string $email
+     * 
+     * @return void
+     */
+    private static function validateEmail(string $email): void
     {
         if (empty($email)) {
             throw new InvalidArgumentException('Не передан электронный адрес');
@@ -66,7 +98,12 @@ class Validator {
         }
     }
 
-    private static function validatePassword(string $password)
+    /** 
+     * @param string $password
+     * 
+     * @return void
+     */
+    private static function validatePassword(string $password): void
     {
         if (empty($password)) {
             throw new InvalidArgumentException('Не передан пароль');
@@ -77,7 +114,12 @@ class Validator {
         }
     }
 
-    private static function validateBirthYear(int $birthYear)
+    /** 
+     * @param string $birthYear
+     * 
+     * @return void
+     */
+    private static function validateBirthYear(int $birthYear): void
     {
         if (empty($birthYear)) {
             throw new InvalidArgumentException('Не передан год рождения');
@@ -88,7 +130,12 @@ class Validator {
         }
     }
 
-    private static function validatePoints(int $points)
+    /** 
+     * @param string $points
+     * 
+     * @return void
+     */
+    private static function validatePoints(int $points): void
     {
         if (empty($points)) {
             throw new InvalidArgumentException('Не переданы суммарные баллы ЕГЭ');
@@ -99,7 +146,12 @@ class Validator {
         }
     }
     
-    private static function validateResidence(string $residence)
+    /** 
+     * @param string $residence
+     * 
+     * @return void
+     */
+    private static function validateResidence(string $residence): void
     {
         if (empty($residence)) {
             throw new InvalidArgumentException('Не передано проживание');

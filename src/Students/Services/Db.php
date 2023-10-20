@@ -5,8 +5,10 @@ use Students\Exceptions\DbException;
 
 class Db
 {
+    /** @var \PDO */
     private $pdo;
 
+    /** @var Db */
     private static $instance;
 
     private function __construct()
@@ -26,11 +28,16 @@ class Db
         }
     }
 
+    /** @return int */
     public function getLastInsertedId(): int
     {
         return (int) $this->pdo->lastInsertId();
     }
 
+    /**
+     *  Checks if a PDO instance already exists, before creating a new one 
+     *  @return Db
+     * */
     public static function getInstance(): self
     {
         if (self::$instance === null) {
@@ -39,6 +46,12 @@ class Db
         return self::$instance;
     }
 
+    /**
+     * @param string $sql
+     * @param array $params
+     * @param string $className
+     * @return array|null
+     */
     public function query(string $sql, array $params = [], string $className = 'stdClass'): ?array
     {
 

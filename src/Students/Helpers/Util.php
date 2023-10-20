@@ -4,6 +4,13 @@ namespace Students\Helpers;
 
 class Util {
     
+    /** 
+     * @param string $string field content from database
+     * 
+     * @param string $search text from search field
+     * 
+     * @return string returns highlighted text or part of text if found
+     */
     public static function highlightSearchResult(string $string, string $search = ''): string
     {    
         if(!empty($search)) {
@@ -15,8 +22,17 @@ class Util {
         return $string;
     }
 
-    public static function showSortingArrow(string $requiredOrder, string $currentOrder, string $direction): void {
-        
+    /**
+     * @param string $requiredOrder
+     * 
+     * @param string $currentOrder
+     * 
+     * @param string $direction
+     * 
+     * @return void
+     */
+    public static function showSortingArrow(string $requiredOrder, string $currentOrder, string $direction): void 
+    {
         if ($requiredOrder === $currentOrder && $direction === "DESC") {
             echo '▼';
         } elseif ($requiredOrder === $currentOrder && $direction === "ASC") {
@@ -24,9 +40,15 @@ class Util {
         }
     }
 
+    /** 
+     * @param string $header
+     * 
+     * @param string $search text from search field
+     * 
+     * @return string
+     */
     public static function getSortingLink(string $header, string $search = ''): string
     {
-    
         if(!isset($_GET['direction']) || $_GET['direction'] == 'ASC') {
             $direction = 'DESC';
         } else {
