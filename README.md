@@ -39,9 +39,9 @@ $ git clone https://github.com/olegeliseev/Students.git
 $ composer install
 ```
 
-Создайте базу данных и импортируйте SQL дамп, находящийся в папке `src`.
+Создайте базу данных и импортируйте SQL дамп, находящийся в корневой папке.
 
-Скопируйте содержимое `config.php.example` в новый файл `config.php`:
+Скопируйте содержимое `config.php.example` в новый файл `config.php` (папка `src`):
 
 ```sh
 $ cp config.php.example config.php
