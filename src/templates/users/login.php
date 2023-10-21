@@ -2,7 +2,7 @@
 
 <header class="header d-flex align-items-center">
     <div class="col">
-        <h1 class="title login-title">Регистрация</h1>
+        <h1 class="title login-title">Вход</h1>
     </div>
 </header>
 
