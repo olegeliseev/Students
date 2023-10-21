@@ -5,7 +5,7 @@ use Students\Helpers\Util;
 include __DIR__ . '/../header.php' ?>
 <header class="header d-flex align-items-center">
     <div class="col-8">
-        <h1 class="title">Список абитуриентов</h1>
+        <h1 class="title">Список студентов</h1>
     </div>
     <div class="col-4">
         <form action="<?= ($pagesCount <= 1) ? "/1" : "/" ?>" 
