@@ -23,12 +23,9 @@ $ git clone https://github.com/olegeliseev/Students.git
     DocumentRoot "/path/to/students/public"
     ServerName students.loc
     
-  <Directory /path/to/students/public>
-    RewriteEngine On
-    RewriteBase /
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+  <Directory "/path/to/students/public">
+    AllowOverride All
+		Require all granted
   </Directory>
 </VirtualHost>
 ```

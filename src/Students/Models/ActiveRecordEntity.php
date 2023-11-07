@@ -8,6 +8,9 @@ abstract class ActiveRecordEntity {
     /** @var int */
     protected $id;
 
+    /** @var string */
+    protected $camelCaseName;
+
     /**
      * @return int
      */

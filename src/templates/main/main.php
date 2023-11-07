@@ -68,14 +68,16 @@ include __DIR__ . '/../header.php' ?>
             </tr>
         </thead>
         <tbody class="table-group-divider">
-            <?php foreach ($students as $student): ?>
-                <tr>
-                    <td><?= Util::highlightSearchResult($student->getFirstName(), $search) ?></td>
-                    <td><?= Util::highlightSearchResult($student->getLastName(), $search) ?></td>
-                    <td><?= Util::highlightSearchResult($student->getGroupNumber(), $search) ?></td>
-                    <td><?= Util::highlightSearchResult($student->getPoints(), $search) ?></td>
-                </tr>
-            <?php endforeach; ?>
+            <?php if(isset($students)): ?>
+                <?php foreach ($students as $student): ?>
+                    <tr>
+                        <td><?= Util::highlightSearchResult($student->getFirstName(), $search) ?></td>
+                        <td><?= Util::highlightSearchResult($student->getLastName(), $search) ?></td>
+                        <td><?= Util::highlightSearchResult($student->getGroupNumber(), $search) ?></td>
+                        <td><?= Util::highlightSearchResult($student->getPoints(), $search) ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </tbody>
     </table>
     

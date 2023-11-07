@@ -5,6 +5,6 @@ return [
         'host' => 'localhost',
         'dbname' => 'students_project',
         'user' => 'root',
-        'password' => ''
+        'password' => 'pikmin96'
     ]
 ];
