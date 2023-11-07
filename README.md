@@ -25,7 +25,7 @@ $ git clone https://github.com/olegeliseev/Students.git
     
   <Directory "/path/to/students/public">
     AllowOverride All
-		Require all granted
+    Require all granted
   </Directory>
 </VirtualHost>
 ```
