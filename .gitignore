@@ -1,3 +1,4 @@
 /vendor/
-src\settings.php
+/src/settings.php
 git rm -r --cached ./.vscode/
+git rm -r --cached ./src/settings.php
