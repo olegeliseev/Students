@@ -22,7 +22,7 @@
             ],
             "env": {
                 "XDEBUG_MODE": "debug,develop",
-                "XDEBUG_CONFIG": "client_port=${port}"
+                "XDEBUG_CONFIG": "client_port=${port}, log_level=7"
             }
         },
         {
