@@ -1,5 +1,6 @@
 /vendor/
 /src/settings.php
 /.vscode/
+/mysql-data/
 git rm -r --cached ./.vscode/
 git rm -r --cached ./src/settings.php

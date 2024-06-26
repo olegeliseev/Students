@@ -2,49 +2,19 @@
 
 Учебная задача по реализации сайта регистрации абитуриентов с соответствующими баллами ЕГЭ.
 
-## Требования к установке
-
-* PHP 8.1+
-* Composer
-* Apache с настроенным DocumentRoot на папку /public (пример настройки ниже)
-
-## Установка
+## Установка через Docker
 
 Перейдите в папку, в которой хотите поместить проект, и клонируйте репозиторий:
 
 ```sh
-$ git clone https://github.com/olegeliseev/Students.git
+$ git clone https://github.com/olegeliseev/students.git
 ```
 
-Выделите виртуальный хост под этот проект и настройте его следующим образом:
+Выполните команду:
 
-```apacheconf
-<VirtualHost *:80>
-    DocumentRoot "/path/to/students/public"
-    ServerName students.loc
-    
-  <Directory "/path/to/students/public">
-    AllowOverride All
-    Require all granted
-  </Directory>
-</VirtualHost>
 ```
-
-Перейдите в папку проекта и выполните:
-
-```sh
-$ composer install
+docker compose up -d
 ```
-
-Создайте базу данных и импортируйте SQL дамп, находящийся в корневой папке.
-
-Скопируйте содержимое `config.php.example` в новый файл `config.php` (папка `src`):
-
-```sh
-$ cp config.php.example config.php
-```
-
-Измените параметры в конфиге так, чтобы они соответствовали параметрам созданной вами базы данных.
 
 ## Функциональность проекта
 
